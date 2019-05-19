@@ -1,25 +1,37 @@
 .panel {
-  background: #dfe3e6;
-  border-radius: 3px;
   width: 272px;
-  overflow: hidden;
-  margin-right: 12px;
-  max-height: 100%;
+  margin: 0 4px;
+  height: calc(100% - 40px);
+  box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
+  white-space: nowrap;
+
+  &__inner {
+    background-color: #dfe1e6;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    position: relative;
+    white-space: normal;
+  }
 
   &__title {
     padding: 12px;
-    padding-bottom: 0;
   }
 
   &--empty {
     .add-form {
       margin-top: 12px;
+      padding-top: 0;
     }
   }
 
   &__items {
-    padding: 12px 12px 0 12px;
+    padding: 0 12px 0 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }

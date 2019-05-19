@@ -33,7 +33,7 @@ const AddForm = ({ children, onAddItem, isEmptyPanel }) => {
             </Card>
             <div className="add-form__bottom">
               <Button>
-                {isEmptyPanel ? "Добавить колонку" : "Введите карточку"}
+                {isEmptyPanel ? "Добавить колонку" : "Добавить карточку"}
               </Button>
               <img
                 onClick={setShowForm.bind(this, false)}
