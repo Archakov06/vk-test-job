@@ -4,6 +4,9 @@
   width: 272px;
   overflow: hidden;
   margin-right: 12px;
+  max-height: 100%;
+  display: inline-block;
+  vertical-align: top;
 
   &__title {
     padding: 12px;

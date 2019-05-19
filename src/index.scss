@@ -3,6 +3,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 14px;
+  background-image: url("./assets/background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
 }
 
 * {
@@ -17,19 +22,11 @@ textarea {
 
 html,
 body,
+.app,
 #root {
   height: 100%;
 }
 
-#root {
-  background-image: url("./assets/background.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 20px;
-}
-
 .app {
-  display: flex;
-  align-items: flex-start;
+  white-space: nowrap;
 }
