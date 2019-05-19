@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+}
+
+* {
+  outline: none;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+button,
+textarea {
+  font-size: 14px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  background-image: url("./assets/background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+.app {
+  display: flex;
+  align-items: flex-start;
+}

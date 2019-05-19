@@ -1,0 +1,41 @@
+.add-form {
+  padding: 0 12px 12px 12px;
+  &__input {
+    textarea {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      resize: none;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-add-btn {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      border-radius: 0 0 3px 3px;
+      cursor: pointer;
+      color: #6b808c;
+      width: 100%;
+
+      &:hover {
+        background-color: darken(#dfe3e6, 10);
+        color: darken(#6b808c, 50);
+      }
+
+      img {
+        margin-right: 8px;
+      }
+    }
+
+    &-clear {
+      cursor: pointer;
+    }
+  }
+}
