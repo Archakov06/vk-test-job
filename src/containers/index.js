@@ -1,1 +1,1 @@
-export { default as Panels } from "./Panels";
+export { default as Columns } from "./Columns";

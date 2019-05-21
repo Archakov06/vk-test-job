@@ -1,4 +1,4 @@
-.panel {
+.column {
   width: 272px;
   margin: 0 4px;
   height: calc(100% - 40px);
@@ -19,7 +19,26 @@
   }
 
   &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 12px;
+  }
+
+  &__remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    img {
+      width: 12px;
+    }
+    &:hover {
+      background-color: rgba(9, 30, 66, 0.13);
+    }
   }
 
   &--empty {

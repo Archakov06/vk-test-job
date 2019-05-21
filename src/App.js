@@ -1,10 +1,10 @@
 import React from "react";
-import { Panels } from "containers";
+import { Columns } from "containers";
 
 function App() {
   return (
     <div className="app">
-      <Panels />
+      <Columns />
     </div>
   );
 }

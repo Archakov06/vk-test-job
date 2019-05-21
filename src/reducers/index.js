@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
-import panels from "./panels";
+import columns from "./columns";
 
 export default combineReducers({
-  panels
+  columns
 });

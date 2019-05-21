@@ -5,8 +5,15 @@ import clearSvg from "assets/clear.svg";
 
 import "./AddForm.scss";
 
-const AddForm = ({ children, onAddItem, isEmptyPanel }) => {
+const AddForm = ({
+  columnIndex,
+  children,
+  onAddCard,
+  onAddColumn,
+  isEmptyColumn
+}) => {
   const [showForm, setShowForm] = useState(false);
+  const [value, setValue] = useState("");
   const textareaRef = useRef(null);
 
   useEffect(() => {
@@ -15,6 +22,16 @@ const AddForm = ({ children, onAddItem, isEmptyPanel }) => {
     }
   }, [showForm]);
 
+  const onAdd = () => {
+    if (isEmptyColumn) {
+      onAddColumn(value);
+    } else {
+      onAddCard(columnIndex, value);
+    }
+    setValue("");
+    setShowForm(false);
+  };
+
   return (
     <Fragment>
       {showForm ? (
@@ -22,8 +39,10 @@ const AddForm = ({ children, onAddItem, isEmptyPanel }) => {
           <div className="add-form__input">
             <Card>
               <textarea
+                onChange={e => setValue(e.target.value)}
+                value={value}
                 placeholder={
-                  isEmptyPanel
+                  isEmptyColumn
                     ? "Введите название колонку"
                     : "Введите название карточку"
                 }
@@ -32,8 +51,8 @@ const AddForm = ({ children, onAddItem, isEmptyPanel }) => {
               />
             </Card>
             <div className="add-form__bottom">
-              <Button>
-                {isEmptyPanel ? "Добавить колонку" : "Добавить карточку"}
+              <Button onClick={onAdd}>
+                {isEmptyColumn ? "Добавить колонку" : "Добавить карточку"}
               </Button>
               <img
                 onClick={setShowForm.bind(this, false)}
@@ -52,7 +71,7 @@ const AddForm = ({ children, onAddItem, isEmptyPanel }) => {
           >
             <img src={addSvg} alt="Add svg icon" />
             <span>
-              {isEmptyPanel
+              {isEmptyColumn
                 ? "Добавить еще одну колонку"
                 : "Добавить еще одну карточку"}
             </span>
