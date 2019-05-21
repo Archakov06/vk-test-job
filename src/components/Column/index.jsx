@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Droppable } from "react-beautiful-dnd";
 
-import { Card, AddForm } from "components";
+import { AddForm } from "containers";
+import { Card } from "containers";
 import clearSvg from "assets/clear.svg";
 
 import "./Column.scss";
@@ -34,7 +35,7 @@ const Column = ({
             {title && (
               <div className="column__title">
                 <b>{title}</b>
-                <div onClick={removeColumn} className="column__remove">
+                <div onClick={removeColumn} className="remove-btn">
                   <img src={clearSvg} alt="Clear svg icon" />
                 </div>
               </div>

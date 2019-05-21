@@ -11,7 +11,11 @@ const initialState = [
   },
   {
     title: "План на день",
-    cards: [1, 2, 3, 4, 5]
+    cards: [
+      "Записаться на курс по React",
+      "Забронировать тир на субботу",
+      "Накидать тем для статей в блог"
+    ]
   }
 ];
 
@@ -27,6 +31,18 @@ export default (state = initialState, action) => {
         }
         return item;
       });
+    case "CARDS:REMOVE":
+      return state.map((item, columnIndex) => {
+        if (action.payload.columnIndex === columnIndex) {
+          return {
+            ...item,
+            cards: item.cards.filter(
+              (_, filterIndex) => filterIndex !== action.payload.cardIndex
+            )
+          };
+        }
+        return item;
+      });
     case "COLUMNS:ADD":
       return [
         ...state,
@@ -35,8 +51,6 @@ export default (state = initialState, action) => {
           cards: []
         }
       ];
-    case "COLUMNS:REMOVE":
-      return state.filter((_, index) => action.payload !== index);
     case "CARDS:REORDER": {
       const { source, destination } = action.payload;
       return reorderCards({
@@ -45,6 +59,8 @@ export default (state = initialState, action) => {
         destination
       });
     }
+    case "COLUMNS:REMOVE":
+      return state.filter((_, index) => action.payload !== index);
     default:
       return state;
   }

@@ -1,4 +1,7 @@
 .card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: #ffffff;
   box-shadow: 0px 1px 4px rgba(9, 45, 66, 0.25);
   border-radius: 3px;
@@ -6,4 +9,12 @@
   margin-bottom: 8px;
   line-height: 19px;
   white-space: normal;
+
+  span {
+    flex: 1;
+  }
+
+  img {
+    width: 10px;
+  }
 }
